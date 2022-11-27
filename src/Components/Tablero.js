@@ -1,0 +1,181 @@
+import React from "react";
+import "./Tablero.css";
+
+function Tablero() {
+  return (
+    <div>
+      <table id="tablero">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="Barranco.png"
+              width="40px"
+              height="40px"
+              alt="barranco"
+            ></img>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <img
+              src="Barranco.png"
+              width="40px"
+              height="40px"
+              alt="barranco"
+            ></img>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <img src="Espana.png" width="40px" height="40px" alt="meta"></img>
+          </td>
+          <td>
+            <img src="tronco.png" width="40px" height="40px" alt="tronco"></img>
+          </td>
+          <td></td>
+          <td>
+            <img src="tronco.png" width="40px" height="40px" alt="tronco"></img>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <img src="tronco.png" width="40px" height="40px" alt="tronco"></img>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <img
+              src="Barranco.png"
+              width="40px"
+              height="40px"
+              alt="barranco"
+            ></img>
+          </td>
+          <td></td>
+          <td>
+            <img src="tronco.png" width="40px" height="40px" alt="tronco"></img>
+          </td>
+          <td></td>
+          <td>
+            <img src="tronco.png" width="40px" height="40px" alt="tronco"></img>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <img src="tronco.png" width="40px" height="40px" alt="tronco"></img>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <img src="tronco.png" width="40px" height="40px" alt="tronco"></img>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <img
+              src="Barranco.png"
+              width="40px"
+              height="40px"
+              alt="barranco"
+            ></img>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <img
+              src="Barranco.png"
+              width="40px"
+              height="40px"
+              alt="barranco"
+            ></img>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td id="car"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  );
+}
+
+export default Tablero;
