@@ -3,10 +3,11 @@ import Tablero from "./Components/Tablero";
 import axios from "axios";
 import "./App.css";
 
-function keyCapture({key}) {
-  const url = "http://localhost:8080/move";
+const url = "http://localhost:8080/";
+
+function moveCapture({ key }) {
   if (["a", "w", "s", "d"].includes(key)) {
-    axios.post(url, { key: key }).then(({ data }) => {
+    axios.post(url + "move", { key: key }).then(({ data }) => {
       const { posX, posY, vidas } = data;
       moveCar(posX, posY);
       checkCar(vidas);
@@ -14,7 +15,13 @@ function keyCapture({key}) {
   }
 }
 
-window.addEventListener("keydown", keyCapture);
+function restartCapture({ key }) {
+  if (key == "Enter") {
+    restart();
+  }
+}
+
+window.addEventListener("keydown", moveCapture);
 
 function moveCar(posX, posY) {
   document.getElementById("car").removeAttribute("id");
@@ -31,14 +38,24 @@ function moveCar(posX, posY) {
 function checkCar(vidas) {
   const vidasHtml = document.getElementById("vidas");
   if (vidas > 10) {
-    vidasHtml.innerText = "ENHORABUENA CHAMPION";
-    window.removeEventListener("keydown", keyCapture);
+    vidasHtml.innerText = "ENHORABUENA CHAMPION. Pulsa ENTER para reiniciar";
+    window.removeEventListener("keydown", moveCapture);
+    window.addEventListener("keydown", restartCapture);
   } else if (vidas <= 0) {
-    vidasHtml.innerText = "CAGASTE";
-    window.removeEventListener("keydown", keyCapture);
+    vidasHtml.innerText = "CAGASTE. Pulsa ENTER para reiniciar";
+    window.removeEventListener("keydown", moveCapture);
+    window.addEventListener("keydown", restartCapture);
   } else {
     vidasHtml.innerText = `Vidas restantes: ${vidas}`;
   }
+}
+
+function restart() {
+  axios.get(url + "restart");
+  moveCar(5, 8);
+  checkCar(10);
+  window.addEventListener("keydown", moveCapture);
+    window.removeEventListener("keydown", restartCapture);
 }
 
 export default function App() {
